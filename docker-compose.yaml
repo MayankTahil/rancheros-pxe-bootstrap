@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     image: config-drive
     restart: always
-    volumes:
-      - /you/data/directory:/www:ro
+    # volumes:
+    #   - /you/data/directory:/www:ro
     ports:
       - "80:80/tcp"
     hostname: config-drive
