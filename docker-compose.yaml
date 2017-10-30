@@ -1,0 +1,23 @@
+---
+version: "2"
+services:
+  config-drive:
+    build:
+      context: ./config-drive
+      dockerfile: Dockerfile
+    image: config-drive
+    restart: always
+    volumes:
+      - /data/cloud-init:/www:ro
+    ports:
+      - "80:80/tcp"
+    hostname: config-drive
+  ipxe:
+    build:
+      context: ./ipxe
+      dockerfile: Dockerfile
+    image: ipxe
+    restart: always
+    ports:
+      - "69:69/udp"
+    hostname: ipxe

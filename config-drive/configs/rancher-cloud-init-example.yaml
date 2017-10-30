@@ -1,0 +1,15 @@
+#cloud-config
+hostname: compute-minion-1
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC...0dk1lK0nuyOh6JE9Wn admin@home.lab
+rancher:
+  network:
+    interfaces:
+      eth1:
+        address: 192.168.10.201/24
+        gateway: 192.168.10.1
+        mtu: 1500
+        dhcp: false
+  docker:
+    tls: false
+    storage_driver: overlay

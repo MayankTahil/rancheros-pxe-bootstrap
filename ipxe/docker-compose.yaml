@@ -1,0 +1,10 @@
+---
+version: "2"
+services:
+
+  pxe-server:
+    image: mayankt/pxe
+    container_name: pxe-server
+    restart: always
+    ports:
+      - "69:69/udp"
