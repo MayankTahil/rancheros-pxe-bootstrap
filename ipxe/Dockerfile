@@ -14,5 +14,7 @@ RUN echo "tftp    dgram   udp4    wait    root    /usr/sbin/in.tftpd /usr/sbin/i
 		echo 'while [[ $(/etc/init.d/tftpd-hpa status | grep "is running") ]]; do sleep 10 ; done' > /loop.sh && chmod +x /loop.sh
 
 EXPOSE 69/udp
+VOLUME /srv/tftp
+WORKDIR /srv/tftp
 
 CMD /etc/init.d/tftpd-hpa start && /bin/bash -c /loop.sh

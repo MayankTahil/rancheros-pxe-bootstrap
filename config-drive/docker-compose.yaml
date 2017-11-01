@@ -1,0 +1,12 @@
+---
+version: "2"
+services:
+
+  pxe-server:
+    image: mayankt/config-drive
+    container_name: config-drive
+    restart: always
+    volume:
+      - ${pwd}/configs:/www:rw
+    ports:
+      - "80:80/tcp"

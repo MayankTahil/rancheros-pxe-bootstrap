@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     image: config-drive
     restart: always
-    # volumes:
-    #   - /you/data/directory:/www:ro
+    volumes:
+      - {/your/cloud-init/data}:/www
     ports:
       - "80:80/tcp"
     hostname: config-drive
@@ -18,6 +18,8 @@ services:
       dockerfile: Dockerfile
     image: ipxe
     restart: always
+    volumes:
+      - {/your/boot-cfg/data}:/srv/tftp
     ports:
       - "69:69/udp"
     hostname: ipxe

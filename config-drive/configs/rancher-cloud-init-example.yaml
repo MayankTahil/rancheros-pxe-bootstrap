@@ -1,15 +1,15 @@
 #cloud-config
 hostname: compute-minion-1
 ssh_authorized_keys:
-  - ssh-rsa AAAAB3NzaC...0dk1lK0nuyOh6JE9Wn admin@home.lab
+  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpmXcktJmAWu8R8eZqXEh4zjMyQAjAGIJ7y4OAPCGShpN7/rHHXugqzGwFZCUqvJH/e2WjAlx/QaqdvsNFRwIvX2yviQAtLHeX7DcjAlFqKJNTm<YOUR KEY VALUES>AgQzlcWe2SJnzHhodAD6SZwH2OnfYAiNTmVs+Nxz/hlqqWjrKzC63u/uSkdp5wHNDi3UQyh3Fq/kQ0/YXmBw5uo0dk1lK0nuyOh6JE9Wn admin@home.lab
 rancher:
   network:
     interfaces:
-      eth1:
+      eth0:
         address: 192.168.10.201/24
         gateway: 192.168.10.1
         mtu: 1500
         dhcp: false
   docker:
-    tls: false
+    tls: true
     storage_driver: overlay

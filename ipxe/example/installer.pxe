@@ -1,0 +1,9 @@
+#!ipxe
+# Boot a persistent RancherOS to RAM
+
+# Location of Kernel/Initrd images
+set base-url http://releases.rancher.com/os/latest
+
+kernel ${base-url}/vmlinuz rancher.state.dev=LABEL=RANCHER_STATE rancher.state.autoformat=[/dev/xvda] rancher.cloud_init.datasources=[url:http://cloud-drive.lab/installer-init.yaml]
+initrd ${base-url}/initrd
+boot

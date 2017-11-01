@@ -6,5 +6,7 @@ services:
     image: mayankt/pxe
     container_name: pxe-server
     restart: always
+    volume:
+      - ${pwd}/example:/srv/tftp:rw
     ports:
       - "69:69/udp"
